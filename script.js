@@ -449,20 +449,17 @@ generarBtn.addEventListener(
            COMPROBAR jsPDF
         ========================== */
 
-        if (
-            !window.jspdf ||
-            !window.jspdf.jsPDF
-        ) {
+        if (!window.jspdf) {
+    alert("❌ jsPDF NO se cargó");
+    return;
+}
 
-            alert(
-                "No se pudo cargar jsPDF.\n\n" +
-                "Compruebe que tenga conexión " +
-                "a Internet y vuelva a cargar " +
-                "la página."
-            );
+        if (!window.jspdf.jsPDF) {
+    alert("⚠️ Existe window.jspdf, pero falta jsPDF");
+    return;
+}
 
-            return;
-        }
+    alert("✅ jsPDF está cargado correctamente");
 
 
         /* =========================
