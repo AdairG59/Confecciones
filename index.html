@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Atelier Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         ENCABEZADO
+    ========================== -->
+
+    <header class="header">
+
+        <div class="header-contenido">
+
+            <h1>Atelier Manager</h1>
+
+            <p>
+                Sistema de cotizaciones
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+
+    <main class="contenedor">
+
+
+        <!-- =========================
+             INFORMACIÓN DEL CLIENTE
+        ========================== -->
+
+        <section class="card">
+
+            <h2>
+                Información del cliente
+            </h2>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label for="cliente">
+                        Nombre del cliente
+                    </label>
+
+                    <input
+                        type="text"
+                        id="cliente"
+                        placeholder="Ej. María López"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="numeroCliente">
+                        Número de cliente
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numeroCliente"
+                        placeholder="Ej. CL-001"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMACIÓN DEL VESTIDO
+        ========================== -->
+
+        <section class="card">
+
+            <h2>
+                Información del vestido
+            </h2>
+
+
+            <div class="campo">
+
+                <label for="vestido">
+                    Descripción del vestido
+                </label>
+
+                <textarea
+                    id="vestido"
+                    rows="4"
+                    placeholder="Ej. Vestido de quince años color azul, con corsé y falda amplia..."
+                ></textarea>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label for="cantidad">
+                        Cantidad de vestidos
+                    </label>
+
+                    <input
+                        type="number"
+                        id="cantidad"
+                        min="1"
+                        value="1"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="precio">
+                        Precio unitario
+                    </label>
+
+                    <input
+                        type="number"
+                        id="precio"
+                        min="0"
+                        step="0.01"
+                        placeholder="Q0.00"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label for="imagen">
+                    Imagen de referencia
+                </label>
+
+                <input
+                    type="file"
+                    id="imagen"
+                    accept="image/*"
+                >
+
+                <div
+                    id="previewImagen"
+                    class="preview-imagen"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMACIÓN DE PAGO
+        ========================== -->
+
+        <section class="card">
+
+            <h2>
+                Información de pago
+            </h2>
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label for="abonado">
+                        Abonado
+                    </label>
+
+                    <input
+                        type="number"
+                        id="abonado"
+                        min="0"
+                        step="0.01"
+                        value="0"
+                        placeholder="Q0.00"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="anticipo">
+                        Anticipo requerido (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="anticipo"
+                        min="0"
+                        max="100"
+                        value="50"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             INFORMACIÓN DEL ATELIER
+        ========================== -->
+
+        <section class="card">
+
+            <h2>
+                Información del atelier
+            </h2>
+
+
+            <div class="campo">
+
+                <label for="empresa">
+                    Nombre de la empresa
+                </label>
+
+                <input
+                    type="text"
+                    id="empresa"
+                    placeholder="Ej. Atelier Guigui"
+                >
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="campo">
+
+                    <label for="direccion">
+                        Dirección
+                    </label>
+
+                    <input
+                        type="text"
+                        id="direccion"
+                        placeholder="Dirección del atelier"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="telefono">
+                        Teléfono
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefono"
+                        placeholder="Ej. 5555-5555"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="campo">
+
+                <label for="logo">
+                    Logo del atelier
+                </label>
+
+                <input
+                    type="file"
+                    id="logo"
+                    accept="image/*"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             RESUMEN
+        ========================== -->
+
+        <section class="card resumen-card">
+
+            <h2>
+                Resumen
+            </h2>
+
+
+            <div class="resumen">
+
+
+                <div class="resumen-fila">
+
+                    <span>
+                        Subtotal
+                    </span>
+
+                    <strong id="subtotal">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="resumen-fila">
+
+                    <span>
+                        Anticipo requerido
+                    </span>
+
+                    <strong id="anticipoMonto">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="resumen-fila">
+
+                    <span>
+                        Abonado
+                    </span>
+
+                    <strong id="abonadoMonto">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="resumen-fila">
+
+                    <span>
+                        Pendiente de anticipo
+                    </span>
+
+                    <strong id="pendienteAnticipo">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+
+
+                <div class="resumen-fila total">
+
+                    <span>
+                        Saldo restante
+                    </span>
+
+                    <strong id="saldo">
+                        Q0.00
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             BOTONES
+        ========================== -->
+
+        <section class="acciones">
+
+
+            <button
+                type="button"
+                id="generarBtn"
+                class="btn btn-principal"
+            >
+                Generar cotización PDF
+            </button>
+
+
+            <button
+                type="button"
+                id="limpiarBtn"
+                class="btn btn-secundario"
+            >
+                Limpiar
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         jsPDF
+         
+         Se carga desde Internet.
+         No necesitas descargar
+         ningún archivo adicional.
+    ========================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+
+
+    <!-- =========================
+         NUESTRO PROGRAMA
+    ========================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
